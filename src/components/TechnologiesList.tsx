@@ -76,6 +76,12 @@ export function TechnologyList({technologiesPromise}: TechnologyProps) {
 
   const handleRemoveAll = () => {
     setStack([]);
+    setTechnologies(
+      technologies.map((item) => ({
+        ...item,
+        addedOrNot: false
+      }))
+    );
     toast.error('All items have been removed from your stack.', {
     position: "bottom-right",
     autoClose: 5000,
