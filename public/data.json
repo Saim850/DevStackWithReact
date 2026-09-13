@@ -1,0 +1,135 @@
+
+[
+  {
+    "id": "react",
+    "name": "React",
+    "category": "Frontend",
+    "description": "A declarative, component-based JavaScript library for building modern user interfaces.",
+    "icon": "https://icon.icepanel.io/Technology/svg/React.svg",
+    "rating": 4.9,
+    "difficulty": "Beginner-Friendly",
+    "badge": "Popular",
+    "badgeColor": "#61DAFB"
+  },
+  {
+    "id": "postgresql",
+    "name": "PostgreSQL",
+    "category": "Database",
+    "description": "A powerful, open-source object-relational database system with proven reliability.",
+    "icon": "https://icon.icepanel.io/Technology/svg/PostgresSQL.svg",
+    "rating": 4.9,
+    "difficulty": "Intermediate",
+    "badge": "Top SQL",
+    "badgeColor": "#4169E1"
+  },
+  {
+    "id": "javascript",
+    "name": "JavaScript",
+    "category": "Frontend",
+    "description": "A versatile programming language used to create interactive and dynamic web applications.",
+    "icon": "https://icon.icepanel.io/Technology/svg/JavaScript.svg",
+    "rating": 4.9,
+    "difficulty": "Beginner-Friendly",
+    "badge": "Essential",
+    "badgeColor": "#F7DF1E"
+  },
+  {
+    "id": "typescript",
+    "name": "TypeScript",
+    "category": "Frontend",
+    "description": "A strongly typed programming language built on JavaScript for scalable application development.",
+    "icon": "https://icon.icepanel.io/Technology/svg/TypeScript.svg",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "badge": "Popular",
+    "badgeColor": "#3178C6"
+  },
+  {
+    "id": "nodejs",
+    "name": "Node.js",
+    "category": "Backend",
+    "description": "A JavaScript runtime that enables developers to build fast and scalable server-side applications.",
+    "icon": "https://icon.icepanel.io/Technology/svg/Node.js.svg",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "badge": "Popular",
+    "badgeColor": "#339933"
+  },
+  {
+    "id": "python",
+    "name": "Python",
+    "category": "Backend",
+    "description": "A high-level programming language known for its simplicity, versatility, and extensive ecosystem.",
+    "icon": "https://icon.icepanel.io/Technology/svg/Python.svg",
+    "rating": 4.9,
+    "difficulty": "Beginner-Friendly",
+    "badge": "Versatile",
+    "badgeColor": "#3776AB"
+  },
+  {
+    "id": "django",
+    "name": "Django",
+    "category": "Backend",
+    "description": "A high-level Python web framework designed for rapid development and clean application architecture.",
+    "icon": "https://icon.icepanel.io/Technology/svg/Django.svg",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "badge": "Powerful",
+    "badgeColor": "#092E20"
+  },
+  {
+    "id": "mongodb",
+    "name": "MongoDB",
+    "category": "Database",
+    "description": "A flexible, document-oriented NoSQL database designed for modern application development.",
+    "icon": "https://icon.icepanel.io/Technology/svg/MongoDB.svg",
+    "rating": 4.7,
+    "difficulty": "Beginner-Friendly",
+    "badge": "NoSQL",
+    "badgeColor": "#47A248"
+  },
+  {
+    "id": "mysql",
+    "name": "MySQL",
+    "category": "Database",
+    "description": "A popular open-source relational database management system used by applications worldwide.",
+    "icon": "https://icon.icepanel.io/Technology/svg/MySQL.svg",
+    "rating": 4.7,
+    "difficulty": "Beginner-Friendly",
+    "badge": "Popular",
+    "badgeColor": "#4479A1"
+  },
+  {
+    "id": "tailwindcss",
+    "name": "Tailwind CSS",
+    "category": "Frontend",
+    "description": "A utility-first CSS framework for rapidly building modern and responsive user interfaces.",
+    "icon": "https://icon.icepanel.io/Technology/svg/Tailwind-CSS.svg",
+    "rating": 4.8,
+    "difficulty": "Beginner-Friendly",
+    "badge": "Trending",
+    "badgeColor": "#06B6D4"
+  },
+  {
+    "id": "docker",
+    "name": "Docker",
+    "category": "DevOps",
+    "description": "A platform for packaging applications and their dependencies into portable containers.",
+    "icon": "https://icon.icepanel.io/Technology/svg/Docker.svg",
+    "rating": 4.7,
+    "difficulty": "Intermediate",
+    "badge": "DevOps",
+    "badgeColor": "#2496ED"
+  },
+  {
+    "id": "git",
+    "name": "Git",
+    "category": "Tools",
+    "description": "A distributed version control system used to track code changes and collaborate on software projects.",
+    "icon": "https://icon.icepanel.io/Technology/svg/Git.svg",
+    "rating": 4.9,
+    "difficulty": "Beginner-Friendly",
+    "badge": "Essential",
+    "badgeColor": "#F05032"
+  }
+]
