@@ -1,4 +1,3 @@
-
 [
   {
     "id": "react",
@@ -9,7 +8,8 @@
     "rating": 4.9,
     "difficulty": "Beginner-Friendly",
     "badge": "Popular",
-    "badgeColor": "#61DAFB"
+    "badgeColor": "#61DAFB",
+    "addedOrNot": false
   },
   {
     "id": "postgresql",
@@ -20,7 +20,8 @@
     "rating": 4.9,
     "difficulty": "Intermediate",
     "badge": "Top SQL",
-    "badgeColor": "#4169E1"
+    "badgeColor": "#4169E1",
+    "addedOrNot": false
   },
   {
     "id": "javascript",
@@ -31,7 +32,8 @@
     "rating": 4.9,
     "difficulty": "Beginner-Friendly",
     "badge": "Essential",
-    "badgeColor": "#F7DF1E"
+    "badgeColor": "#F7DF1E",
+    "addedOrNot": false
   },
   {
     "id": "typescript",
@@ -42,7 +44,8 @@
     "rating": 4.8,
     "difficulty": "Intermediate",
     "badge": "Popular",
-    "badgeColor": "#3178C6"
+    "badgeColor": "#3178C6",
+    "addedOrNot": false
   },
   {
     "id": "nodejs",
@@ -53,7 +56,8 @@
     "rating": 4.8,
     "difficulty": "Intermediate",
     "badge": "Popular",
-    "badgeColor": "#339933"
+    "badgeColor": "#339933",
+    "addedOrNot": false
   },
   {
     "id": "python",
@@ -64,7 +68,8 @@
     "rating": 4.9,
     "difficulty": "Beginner-Friendly",
     "badge": "Versatile",
-    "badgeColor": "#3776AB"
+    "badgeColor": "#3776AB",
+    "addedOrNot": false
   },
   {
     "id": "django",
@@ -75,7 +80,8 @@
     "rating": 4.8,
     "difficulty": "Intermediate",
     "badge": "Powerful",
-    "badgeColor": "#092E20"
+    "badgeColor": "#092E20",
+    "addedOrNot": false
   },
   {
     "id": "mongodb",
@@ -86,7 +92,8 @@
     "rating": 4.7,
     "difficulty": "Beginner-Friendly",
     "badge": "NoSQL",
-    "badgeColor": "#47A248"
+    "badgeColor": "#47A248",
+    "addedOrNot": false
   },
   {
     "id": "mysql",
@@ -97,7 +104,8 @@
     "rating": 4.7,
     "difficulty": "Beginner-Friendly",
     "badge": "Popular",
-    "badgeColor": "#4479A1"
+    "badgeColor": "#4479A1",
+    "addedOrNot": false
   },
   {
     "id": "tailwindcss",
@@ -108,7 +116,8 @@
     "rating": 4.8,
     "difficulty": "Beginner-Friendly",
     "badge": "Trending",
-    "badgeColor": "#06B6D4"
+    "badgeColor": "#06B6D4",
+    "addedOrNot": false
   },
   {
     "id": "docker",
@@ -119,7 +128,8 @@
     "rating": 4.7,
     "difficulty": "Intermediate",
     "badge": "DevOps",
-    "badgeColor": "#2496ED"
+    "badgeColor": "#2496ED",
+    "addedOrNot": false
   },
   {
     "id": "git",
@@ -130,6 +140,7 @@
     "rating": 4.9,
     "difficulty": "Beginner-Friendly",
     "badge": "Essential",
-    "badgeColor": "#F05032"
+    "badgeColor": "#F05032",
+    "addedOrNot": false
   }
 ]

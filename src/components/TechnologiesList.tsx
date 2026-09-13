@@ -1,27 +1,41 @@
 import { X } from "lucide-react";
 import type { TechnologyType } from "../type";
-import { useState } from "react";
+import { use, useEffect, useState } from "react";
 import { Bounce, toast } from "react-toastify";
 
 interface TechnologyProps {
-  technologies: TechnologyType[];
+  technologiesPromise: Promise<TechnologyType[]>;
 }
 
 interface stackType{
-  icon:string;
+  id:string
   name:string;
+  icon:string;
   category:string;
 }
 
-export function TechnologyList({ technologies }: TechnologyProps) {
-
+export function TechnologyList({technologiesPromise}: TechnologyProps) {
   const[stack, setStack] = useState<stackType[]>([]);
+  const[technologies, setTechnologies] = useState<TechnologyType[]>([])
 
-  const handleAddToStack = (icon:string, name:string, category:string) => {
-    const exists = stack.find((item) => item.name === name);
+  const res = use(technologiesPromise);
 
-    if(exists === undefined){
-      setStack([...stack, {icon, name, category}]);  
+  useEffect(() => {
+    setTechnologies(res);
+  }, [res]);
+
+  const handleAddToStack = (id:string, name:string, icon:string, category:string) => {
+    const technology = technologies.find((item) => item.id === id);
+    
+    if(!technology?.addedOrNot){
+      setStack([...stack, {id, name, icon, category}]);  
+      setTechnologies(
+        technologies.map((item) =>
+          item.id === id
+            ? { ...item, addedOrNot: true }
+            : item
+        )
+      );
       toast.success(`${name} added successfully.`, {
       position: "bottom-right",
       autoClose: 5000,
@@ -33,25 +47,20 @@ export function TechnologyList({ technologies }: TechnologyProps) {
       theme: "light",
       transition: Bounce,
       });
-    }
-    else{
-      toast.error(`${name} is already in your stack.`, {
-      position: "bottom-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      transition: Bounce,
-      });
+
     }
   }
 
-  const handleDelete = (name:string) => {
-    const deletedStack = stack.filter((val) => val.name != name);
+  const handleDelete = (id:string, name:string) => {
+    const deletedStack = stack.filter((val) => val.id != id);
     setStack(deletedStack);
+    setTechnologies(
+      technologies.map((item) =>
+        item.id === id
+          ? { ...item, addedOrNot: false }
+          : item
+      )
+      );
     toast.error(`${name} removed successfully.`, {
     position: "bottom-right",
     autoClose: 5000,
@@ -127,9 +136,16 @@ export function TechnologyList({ technologies }: TechnologyProps) {
                 </p>
               </div>
 
-              <button onClick={() => handleAddToStack(technology.icon, technology.name, technology.category)} className="w-full rounded-xl bg-black py-3 text-base font-medium text-white transition hover:bg-gray-800">
-                Add to Stack
-              </button>
+              {!technology.addedOrNot ? 
+                <button onClick={() => handleAddToStack(technology.id, technology.name, technology.icon, technology.category)} className="w-full rounded-xl bg-black py-3 text-base font-medium text-white transition hover:bg-gray-800">
+                  Add to Stack
+                </button>
+              :
+                <button className="w-full rounded-xl border-2 border-black py-3 text-base font-medium text-black">
+                  ✓ Added to Stack
+                </button>
+            }
+
             </div>
           ))}
         </div>
@@ -174,7 +190,7 @@ export function TechnologyList({ technologies }: TechnologyProps) {
                     </p>
                   </div>
 
-                  <button onClick={() => handleDelete(val.name)} className="text-gray-400 transition hover:text-red-500">
+                  <button onClick={() => handleDelete(val.id, val.name)} className="text-gray-400 transition hover:text-red-500">
                     <X />
                   </button>
                 </div>

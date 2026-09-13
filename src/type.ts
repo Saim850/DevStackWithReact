@@ -8,4 +8,5 @@ export interface TechnologyType {
   difficulty: "Beginner-Friendly" | "Intermediate" | "Advanced";
   badge: "Popular" | "Fast"| "Essential" | "Containers";
   badgeColor:string;
+  addedOrNot:boolean
 }
