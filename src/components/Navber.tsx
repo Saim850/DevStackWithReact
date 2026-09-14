@@ -33,9 +33,9 @@ export default function Navber() {
             <li className='hover:text-[#DB2777]'>Contact</li>
           </ul>
         </div>
-        <div className="md:mr-20 navbar-end flex gap-4 text-[14px] font-medium">
+        <div className="navbar-end md:mr-20 flex gap-2 sm:gap-4 text-[14px] font-medium">
           <button className='hover:cursor-pointer'>Sign In</button>
-          <button className='bg-[#DB2777] text-white rounded-full px-4 py-2 hover:cursor-pointer'>Sign Up</button>
+          <button className='bg-linear-to-r from-pink-500 to-purple-500 text-white rounded-full px-3 sm:px-4 py-2 hover:cursor-pointer'>Sign Up</button>
         </div>
     </div>
   )

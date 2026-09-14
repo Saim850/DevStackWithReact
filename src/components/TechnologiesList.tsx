@@ -24,19 +24,10 @@ export function TechnologyList({technologiesPromise}: TechnologyProps) {
     setTechnologies(res);
   }, [res]);
 
-  const handleAddToStack = (id:string, name:string, icon:string, category:string) => {
-    const technology = technologies.find((item) => item.id === id);
-    
-    if(!technology?.addedOrNot){
-      setStack([...stack, {id, name, icon, category}]);  
-      setTechnologies(
-        technologies.map((item) =>
-          item.id === id
-            ? { ...item, addedOrNot: true }
-            : item
-        )
-      );
-      toast.success(`${name} added successfully.`, {
+  const reactTost = (message:string, type:'success' | 'error'):void => {
+    const tostType = type === 'success' ? toast.success : toast.error
+
+    tostType(`${message}`, {
       position: "bottom-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -46,12 +37,26 @@ export function TechnologyList({technologiesPromise}: TechnologyProps) {
       progress: undefined,
       theme: "light",
       transition: Bounce,
-      });
+    });
+  }
 
+  const handleAddToStack = (id:string, name:string, icon:string, category:string):void => {
+    const technology = technologies.find((item) => item.id === id);
+    
+    if(!technology?.addedOrNot){
+      setStack(prev => [...prev, {id, name, icon, category}]);  
+      setTechnologies(prev => 
+        prev.map((item) =>
+          item.id === id
+            ? { ...item, addedOrNot: true }
+            : item
+        )
+      );
+      reactTost(`${name} added successfully`, "success")
     }
   }
 
-  const handleDelete = (id:string, name:string) => {
+  const handleDelete = (id:string, name:string):void => {
     const deletedStack = stack.filter((val) => val.id != id);
     setStack(deletedStack);
     setTechnologies(
@@ -61,20 +66,10 @@ export function TechnologyList({technologiesPromise}: TechnologyProps) {
           : item
       )
       );
-    toast.error(`${name} removed successfully.`, {
-    position: "bottom-right",
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: false,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: "light",
-    transition: Bounce,
-    });
+    reactTost(`${name} removed successfully.`, 'error');
   }
 
-  const handleRemoveAll = () => {
+  const handleRemoveAll = ():void => {
     setStack([]);
     setTechnologies(
       technologies.map((item) => ({
@@ -82,23 +77,18 @@ export function TechnologyList({technologiesPromise}: TechnologyProps) {
         addedOrNot: false
       }))
     );
-    toast.error('All items have been removed from your stack.', {
-    position: "bottom-right",
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: false,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: "light",
-    transition: Bounce,
-    });
+    reactTost('All items have been removed from your stack.', "error");
   }
 
   return (
-    <div className="mx-auto max-w-8xl p-5 lg:p-10">
-      <div className="grid grid-cols-1 gap-8 xl:grid-cols-5">
+    <div className="w-ful flex flex-col items-center gap-10 text-start justify-center p-5 lg:p-10">
 
+      <div className="ml-10 mt-10">
+        <h1 className="text-4xl font-bold">Explore the <span className="bg-linear-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text font-bold">Technologies</span></h1>
+        <p className="text-gray-500">Pick one technology per category to build your ideal stack.</p>    
+      </div>
+
+      <div className="max-w-[1980px] grid grid-cols-1 gap-8 xl:grid-cols-5">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3 xl:col-span-4">
           {technologies.map((technology) => (
             <div key={technology.id} className="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
@@ -143,7 +133,7 @@ export function TechnologyList({technologiesPromise}: TechnologyProps) {
               </div>
 
               {!technology.addedOrNot ? 
-                <button onClick={() => handleAddToStack(technology.id, technology.name, technology.icon, technology.category)} className="w-full rounded-xl bg-black py-3 text-base font-medium text-white transition hover:bg-gray-800">
+                <button onClick={() => handleAddToStack(technology.id, technology.name, technology.icon, technology.category,)} className="w-full rounded-xl bg-black py-3 text-base font-medium text-white transition hover:bg-gray-800">
                   Add to Stack
                 </button>
               :
